@@ -1,0 +1,21 @@
+#include <Reg52.h>
+#include “LCD_DISPLAY.h”
+sbit input = P1^0;
+sbit output = P1^1;
+void main () {
+	//LCD_Init ();
+	//LCD_String (“Detecting….”);
+     while (1) {
+     output = 0;
+	LCD_Init ();
+LCD_String (“Detecting….”);
+	if (input == 1) {
+	output=1;
+	LCD_Command(0x01);
+	LCD_String (“Motion Detected”);
+	delay (500);
+}
+if (input == 0) {
+}
+      }
+}
